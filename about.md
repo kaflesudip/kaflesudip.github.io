@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+A freelance developer, Startup cofounder and a traveler.
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+I do Python, Django, Javascript and Machine Learning stuffs. 
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[soodip.kafle@gmail.com](mailto:soodip.kafle@gmail.com)
