@@ -1,0 +1,46 @@
+---
+layout: post
+title: Receive Email Notification on Server Error in Django
+date: '2014-08-19T06:28:00+05:45'
+tags:
+- django
+- python
+- programming
+tumblr_url: http://blog.sudipk.com.np/post/95180526429/receive-email-notification-on-server-error-in
+---
+<p>Django provides an excellent built-in feature of sending email to the administrator whenever a server error occurs. The email is sent to the users listed in ADMINS variables whenever your code <span>raises an unhandled exception and results in an internal server error (HTTP status code 500). </span></p>
+<p><span><!-- more -->Emails are sent via. Django&rsquo;s logging framework. The default LOGGING configuration is enough to receive email which looks similar to code below:</span></p>
+<pre>    <code>
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'handlers': {
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        }
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    }
+}
+    </code>
+</pre>
+<p><span>You need to define a few variables in settings.py to make sure you receive email. </span></p>
+<p><strong>Define SERVER_EMAIL and ADMINS variable</strong></p>
+<p>Define name and email of all your administrator in ADMINS variable as a tuple. </p>
+<pre><code>ADMINS = (('John', 'john@example.com'), ('Mary', 'mary@example.com'))</code></pre>
+<p>Also make sure that you have defined SERVER_EMAIL variable. Otherwise, the mail will be sent via. root@localhost and your mail client may block it.</p>
+<pre><code>SERVER_EMAIL = 'info@mysite.com'</code></pre>
+<p>With your default settings, you will now receive email as well as complete log on your email.</p>
+<p>You can also receive email on 404 errors. I usually avoid this as it would flood my email. Complete details can be found on <a href="https://docs.djangoproject.com/en/dev/howto/error-reporting/" target="_blank">Django&rsquo;s official page on error reporting</a>.</p>

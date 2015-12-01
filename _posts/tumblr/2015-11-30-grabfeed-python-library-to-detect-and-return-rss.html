@@ -1,0 +1,36 @@
+---
+layout: post
+title: Grabfeed - Python Library to Detect and Return RSS Feed for Given Website
+date: '2015-11-30T08:03:09+05:45'
+tags: []
+tumblr_url: http://blog.sudipk.com.np/post/134264360094/grabfeed-python-library-to-detect-and-return-rss
+---
+<p>About a year ago, I released my first Python library on Pypi - Grabfeed. It is a simple library that detects RSS feeds in given website (especially blogs) and returns the complete feed URL. Here is how you will use it:</p><pre data-initialized="true" data-gclp-id="3"><code>
+    from grabfeed.grabber import return_rss
+    rss_feed = return_rss('http://techcrunch.com')
+    print(rss_feed)
+    Output: <a href="http://techcrunch.com/feed/">http://techcrunch.com/feed/</a> 
+</code>
+</pre>
+
+<h2>Installing Grabfeed</h2>
+<p>Grabfeed can be installed using pip. It depends upon two libraries - Beautifulsoup and requests. They are installed automatically. To install grabfeed run the following command:
+</p><pre><code>    pip install grabfeed</code></pre>
+
+
+<h2>Features of Grabfeed: </h2><p><b>Grabfeed Supports all modern versions of Python:</b></p><ul><li>Python 2.6</li>
+<li>Python 2.7</li>
+<li>Python 3.3</li>
+<li>Python 3.4</li>
+<li>Even PyPy!</li>
+
+</ul><p><b> Supports most modern blogging platforms</b></p>
+<p>
+The libarary is tested with most modern blogging platforms: Wordpress, Blogger, Tumblr, Ghost, Svbtle and Medium
+</p>
+
+<p><b>Grabfeed is automatically tested</b></p>
+<p>The library is integrated is Travis-CI and tested automatically with all platforms and versions of Python once a commit is made.</p>
+
+<h2>Contributing to Grabfeed</h2>
+<p>You can fork the project on <a href="http://github.com/kaflesudip/grabfeed">Github</a> and send a pull request.</p>
