@@ -5,17 +5,22 @@ date: '2015-11-30T08:03:09+05:45'
 tags: []
 tumblr_url: http://kaflesudip.tumblr.com/post/134264360094/grabfeed-python-library-to-detect-and-return-rss
 ---
-<p>About a year ago, I released my first Python library on Pypi - Grabfeed. It is a simple library that detects RSS feeds in given website (especially blogs) and returns the complete feed URL. Here is how you will use it:</p><pre data-initialized="true" data-gclp-id="3"><code>
-    from grabfeed.grabber import return_rss
-    rss_feed = return_rss('http://techcrunch.com')
-    print(rss_feed)
-    Output: <a href="http://techcrunch.com/feed/">http://techcrunch.com/feed/</a> 
-</code>
-</pre>
+<p>About a year ago, I released my first Python library on Pypi - Grabfeed. It is a simple library that detects RSS feeds in given website (especially blogs) and returns the complete feed URL. Here is how you will use it:</p>
+
+{% highlight python %}
+from grabfeed.grabber import return_rss
+rss_feed = return_rss('http://techcrunch.com')
+print(rss_feed)
+
+# Output: http://techcrunch.com/feed/
+{% endhighlight %}
 
 <h2>Installing Grabfeed</h2>
 <p>Grabfeed can be installed using pip. It depends upon two libraries - Beautifulsoup and requests. They are installed automatically. To install grabfeed run the following command:
-</p><pre><code>    pip install grabfeed</code></pre>
+
+{% highlight python %}
+pip install grabfeed
+{% endhighlight %}
 
 
 <h2>Features of Grabfeed: </h2><p><b>Grabfeed Supports all modern versions of Python:</b></p><ul><li>Python 2.6</li>
